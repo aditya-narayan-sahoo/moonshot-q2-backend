@@ -8,6 +8,7 @@ dotenv.config();
 const authRoutes = require("./routes/authRoutes");
 const dataRoutes = require("./routes/dataRoutes");
 const chartRoutes = require("./routes/chartRoutes");
+const { errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
 
@@ -15,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(errorHandler);
 
 //Serving static files for frontend when deployed
 if (process.env.NODE_ENV === "production") {

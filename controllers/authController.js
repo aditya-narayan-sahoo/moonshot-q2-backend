@@ -20,6 +20,7 @@ const saveUsers = (users) => {
   writeFileSync(dbFile, JSON.stringify(users, null, 2));
 };
 
+//SignUp
 exports.signup = async (req, res) => {
   const { name, email, password } = req.body;
 

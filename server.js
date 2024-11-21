@@ -7,6 +7,7 @@ dotenv.config();
 
 const authRoutes = require("./routes/authRoutes");
 const dataRoutes = require("./routes/dataRoutes");
+const chartRoutes = require("./routes/chartRoutes");
 
 const app = express();
 
@@ -23,6 +24,7 @@ if (process.env.NODE_ENV === "production") {
 //API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/data", dataRoutes);
+app.use("/api/charts", chartRoutes);
 
 //Catching routes for serving frontend in production
 if (process.env.NODE_ENV === "production") {
